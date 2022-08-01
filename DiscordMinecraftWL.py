@@ -18,7 +18,7 @@ async def on_message(message):
         member = message.author
         role = discord.utils.get(message.guild.roles, name = "ROLE")
         await member.add_roles(role)
-        await message.channel.send(f'Игрок {nick} был добавлен в Whitelist!')
+        await message.channel.send(f'+{nick}!')
 
         with Client('127.0.0.1', 25575, passwd='123qwe') as mineserv:
             response = mineserv.run('easywl', 'add', nick)
